@@ -1,0 +1,16 @@
+ php:
+  build: .
+  ports:
+    - "80:80" #porta http
+    - "443:443" #porta https
+  volumes:
+  - ./www:/var/www/html # le a minha pasta local
+  links:
+  - db
+  db:
+    image: mysql:5.7
+    volumes:
+      - /var/lib/mysql
+    environment:
+    - MYSQL_ROOT_PASSWORD=myrootpass
+    - MYSQL_DATABASE=mydb
