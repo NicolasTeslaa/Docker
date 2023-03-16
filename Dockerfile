@@ -2,9 +2,10 @@ FROM openjdk
 # o comando from serve de base para a criação do nosso container image
 #  sendo a primeira instrução da nossa dockerfile
 
-COPY exemplo.txt /app/exemplo.txt
+COPY exemplo.txt /app
 # o comando COPY copia o arquivo dentro de algum diretório que ainda iremos definir 
 # dentro do nosso container
+
 
 ADD  aula.tar.gz /app/exemplos
 # esse comando faz o download de um arquivo remoto dentro do nosso diretório
@@ -12,6 +13,9 @@ ADD  aula.tar.gz /app/exemplos
 
 RUN apt-get update && apt-get install ...
 # executa algum comando que fazemos 
+
+RUN mkdir -p /app/exemplo
+# para criar dois diretórios preciso adicionar um parametro -p
 
 CMD ["/app"]
 # só executa quando o container ja estiver sendo executado

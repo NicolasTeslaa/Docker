@@ -1,0 +1,70 @@
+# Comandos CLI
+
+# Após já ter criado o docker file
+
+```bash
+docker build -t (nome da imagem) -f (diretório de uso, exemplo: api/db/Dockerfile) .
+```
+
+<aside>
+💡 -t  (nome da imagem) (significa tag e que estamos dando um nome para a imagem)
+
+</aside>
+
+<aside>
+💡 -f (diretório de uso, exemplo: api/db/Dockerfile) (direciona o diretório onde estará o dockerfile)
+
+</aside>
+
+# Visualizar as imagens disponiveis para uso
+
+<aside>
+💡 docker image ls
+
+</aside>
+
+## Após a imagem já ter sido criada
+
+para executar a imagedocker 
+
+```bash
+docker run -d --rm --name (nomecontainer) (nome image container)
+```
+
+<aside>
+💡 -d ( executa em backgroud, o terminal nao fica preso na exibição das informações sobre o container ou seja, não iriamos conseguir usar o terminal sem esse parametro, usando o -d podemos continuar usando o mesmo terminal
+após a criação do container)
+
+</aside>
+
+<aside>
+💡 —rm (signfica que se já houver um container com o mesmo objetivo, ele irá apagar o container anterior e criar um novo )
+
+</aside>
+
+<aside>
+💡 —name (nomecontainer) (forma o nome do container que facilitará a identificação do mesmo)
+
+</aside>
+
+# Para executar comandos enquanto o container está ativo e operando
+
+```bash
+docker exec -i (nome do container) (comando a ser executado) 
+```
+
+<aside>
+💡 -i (comando no modo interativo, permite que o processo não seja finalizado até ser concluido)
+
+</aside>
+
+# Para acessar o container e ver os resultados
+
+```bash
+docker exec -it (nome terminal) (comando a ser executado - /bin/bash)
+```
+
+<aside>
+💡 -it ( signfica que vamos utilizar o TTY que signfica terminal )
+
+</aside>
